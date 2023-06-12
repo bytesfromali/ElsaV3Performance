@@ -17,7 +17,7 @@ builder.Services.AddElsa(elsa =>
     elsa.UseIdentity(identity =>
     {
         identity.UseAdminUserProvider();
-        identity.TokenOptions = options => options.SigningKey = "";
+        identity.TokenOptions = options => options.SigningKey = "ZWxzYXYzLXBlcmZvcm1hbmNlLXRlc3Q=";
     });
 
     elsa.UseDefaultAuthentication(auth => auth.UseAdminApiKey());
