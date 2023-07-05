@@ -9,6 +9,10 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddElsa(elsa =>
 {
+    elsa.UseWorkflowRuntime(runtime =>
+    {
+        runtime.UseAsyncWorkflowStateExporter();
+    });
     elsa.UseIdentity(identity =>
     {
         identity.UseAdminUserProvider();
