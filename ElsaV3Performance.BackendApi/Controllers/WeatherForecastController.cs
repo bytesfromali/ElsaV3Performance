@@ -19,8 +19,11 @@ namespace ElsaV3Performance.BackendApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<IEnumerable<WeatherForecast>> Get()
         {
+            // Addind delay of 5 seconds to API call to represent database and other possible calls
+            await Task.Delay(3000);
+
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
